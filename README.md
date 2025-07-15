@@ -66,6 +66,6 @@ RPUSH mul_list 785 58 12
 
 4. Run All Microservices
 
-Build and launch all services (including Redis, if not already running):
+Build and launch all services:
 
 docker compose up 
