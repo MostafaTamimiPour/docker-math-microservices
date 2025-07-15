@@ -1,0 +1,85 @@
+version: "3.8"
+
+services:
+  adder:
+    build: ./adder
+    ports:
+      - "5000:5000"
+    networks:
+      - calcnet
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  subtractor:
+    build: ./subtractor
+    ports:
+      - "5001:5001"
+    networks:
+      - calcnet
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+      
+  multiplier:
+    build: ./multiplier
+    ports:
+      - "5002:5002"
+    networks:
+      - calcnet
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+
+      
+  divider:
+    build: ./divider
+    ports:
+      - "5003:5003"
+    networks:
+      - calcnet
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+      
+
+  controller:
+    build: .
+    command: ["python", "controller.py"]
+    depends_on:
+      - adder
+      - subtractor
+      - multiplier
+      - divider
+    networks:
+      - calcnet
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - calcnet
+      
+networks:
+  calcnet:
+    driver: bridge
