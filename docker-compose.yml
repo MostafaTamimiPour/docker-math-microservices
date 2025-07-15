@@ -52,7 +52,6 @@ services:
     depends_on:
       - redis
       
-
   controller:
     build: .
     command: ["python", "controller.py"]
