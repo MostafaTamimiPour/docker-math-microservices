@@ -49,7 +49,7 @@ Launch Redis using Docker Compose:
 docker compose up redis
 
 2. Connect to Redis with redis-cli
-ویرایش با Canvas
+
 docker exec -it <redis-container-name> redis-cli
 Tip: Use docker ps to find the exact container name.
 
@@ -67,5 +67,5 @@ RPUSH mul_list 785 58 12
 4. Run All Microservices
 
 Build and launch all services (including Redis, if not already running):
-ویرایش با Canvas
+
 docker compose up 
