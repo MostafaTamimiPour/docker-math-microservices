@@ -30,10 +30,11 @@ This project is a demonstration of basic **math microservices** — including Ad
 
 
 ### Quick Start
+
 This section will help you quickly set up and test all services using Docker Compose, Redis, and example data.
 
 
-Tip: It is recommended to use tmux or split your terminal windows when running the following commands.
+Tip: It is recommended to use tmux for splitting your terminal windows when running the following commands.
 
 Some Docker commands (such as docker compose up) will occupy the terminal session, and you may be limited to a single interaction window.
 
@@ -51,6 +52,7 @@ docker compose up redis
 2. Connect to Redis with redis-cli
 
 docker exec -it <redis-container-name> redis-cli
+
 Tip: Use docker ps to find the exact container name.
 
 3. Add Required List Data to Redis
@@ -65,7 +67,7 @@ RPUSH mul_list 785 58 12
 
 
 4. Run All Microservices
-
+   
 Build and launch all services:
 
 docker compose up 
