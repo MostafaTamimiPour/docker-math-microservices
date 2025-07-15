@@ -33,12 +33,7 @@ This project is a demonstration of basic **math microservices** — including Ad
 
 - This section will help you quickly set up and test all services using Docker Compose, Redis, and example data.
 
-
-- Tip: It is recommended to use tmux for splitting your terminal windows when running the following commands.
-
-- Some Docker commands (such as docker compose up) will occupy the terminal session, and you may be limited to a single interaction window.
-
-- Alternatively, add the -d (detach) flag to your Docker Compose commands (docker compose up -d) to run containers in the background, freeing up your terminal for other tasks.
+- Tip: It is recommended to use tmux for splitting your terminal windows when running the following commands. Some Docker commands (such as docker compose up) will occupy the terminal session, and you may be limited to a single interaction window. Alternatively, add the -d (detach) flag to your Docker Compose commands (docker compose up -d) to run containers in the background, freeing up your terminal for other tasks.
 
 
 
